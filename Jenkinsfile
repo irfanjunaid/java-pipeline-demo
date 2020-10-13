@@ -12,7 +12,11 @@ pipeline {
         stage('Test'){
             steps {
                 sh 'mvn test'
-                junit 'target/surefire-reports/*.xml'
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
         stage('Run') {
