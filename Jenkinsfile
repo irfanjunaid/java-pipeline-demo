@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh 'make publish'
+                sh './script.sh'
             }
         }
     }
